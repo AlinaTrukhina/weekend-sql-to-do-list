@@ -1,35 +1,53 @@
 * {box-sizing: border-box}
 
 html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
+    /* height: 100%;
+    width: 100%; */
+    margin: 0; 
     padding: 0;
+    font-family: cursive;
 }
 
 body {
     background-color: lightsteelblue;
+    color: rgb(104, 26, 0);
 }
 
 h1 {
+    padding-top: 5%;
     text-align: center;
+    text-decoration: underline;
+    font-size: 2.5em;
+    font-weight: bolder;
 }
 
-section {
+form {
     display: flex;
     justify-content: center;
-    margin: 5px;
+    margin: 10px 5px;
 }
 
 input {
     margin: 5px;
-    padding: 10px 1px;
+    padding: 10px 10px;
     width: 50%;
     height: inherit;
+    background-color: lightpink;
+    font-family: cursive;
+    font-size: 1.1em;
+    border-radius: 5px;
 }
+
+::placeholder { 
+    color: rgb(104, 26, 0);
+    opacity: 1; 
+    text-align: center;
+    font-size: large;
+  }
 
 table {
     border: solid black 1px;
+    background-color: lightpink;
     border-collapse: collapse;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -39,27 +57,46 @@ table {
     margin: auto auto 5em auto;
 }
 
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
 caption {
-    font: 1.5em sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: cursive;
+    padding: 5px;
+    text-decoration:wavy;
 }
 
 td {
     border: solid darkblue 1px;
-    border-collapse: collapse;
+    text-align: center;
 }
 
-tr, th{
+tr, th {
     border: solid darkblue 1px;
-    border-collapse: collapse;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
-    padding-right: 70px;
+    padding-right: 10px;
     margin: auto auto 5em auto;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(226, 149, 160);
+    font-size: 1.25em;
 }
 
 table {
-    border-radius: 10px;
+    font-size: 1.15em;
+    border: solid darkblue 2px;
+    border-collapse: collapse;
 }
 
 .tasktodo {
@@ -74,9 +111,37 @@ button {
     margin: 2px;
 }
 
+.deleteBtn {
+    background-color: rgba(132, 33, 13, 0.724);
+    color: lightcyan;
+    border-color: lightslategray;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: cursive;
+}
+
+.markCompleteBtn {
+    background-color: lightgreen;
+    border-color: lightgreen;
+    color: black;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: cursive;
+}
+
 #addTaskBtn {
     margin: inherit;
     height: inherit;
+    padding: 5px 10px;
+    background-color: lightcoral;
+    color: darkblue;
+    font-size: 1.2em;
+    font-family: cursive;
+    border-radius: 5px;
+}
+
+#addTaskBtn:onClick {
+    border-color: white;
 }
 
 
