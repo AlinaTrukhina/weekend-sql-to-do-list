@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 function setUpClickListeners() {
     $('#addTaskBtn').on('click', addTask);
+    $('body').on('click', '.deleteBtn', deleteTask);
 }
 
 function getTasks() {
@@ -50,8 +51,28 @@ function addTask() {
     .catch((err) => {
         console.log('add task error', err);
     })
+
+    $('#taskInput').val() = '';
 } // end addTask
 
+// function to delete a task
+function deleteTask() {
+    console.log('in delete task');
+
+    const taskID = $(this).data('id');
+    console.log('task ID', taskID);
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskID}`
+    })
+    .then((response) => {
+        console.log('task deleted');
+        getTasks();
+    })
+    .catch((err) => {
+        console.log('DELETE task error', err);
+    })
+}
 
 function render(taskList) {
 $('#taskBody').empty();
@@ -61,7 +82,7 @@ for (let task of taskList) {
         <tr>
             <td>${task.task}</td>
             <td>${task.complete}</td>
-            <td></td>
+            <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
         </tr>
     `)
 }

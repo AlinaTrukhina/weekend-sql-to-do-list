@@ -33,7 +33,7 @@ taskRouter.post('/', (req, res) => {
         req.body.task,
         req.body.complete 
     ];
-    
+
     pool.query(sqlText, sqlParam) 
         .then((dbRes) => {
             res.sendStatus(201);
@@ -46,6 +46,25 @@ taskRouter.post('/', (req, res) => {
 
 
 // DELETE
+taskRouter.delete('/:id', (req, res) => {
+    console.log('in delete router');
+
+    const sqlText = `
+        DELETE FROM "todolist" WHERE "id" = $1
+    `
+
+    const sqlParam = [ req.params.id ];
+
+    pool.query(sqlText, sqlParam) 
+        .then((dbRes) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('error deleting task', err);
+            res.sendStatus(500);
+        })
+}); // end DELETE
+
 
 // PUT
 
