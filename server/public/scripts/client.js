@@ -18,13 +18,24 @@ function getTasks() {
         const taskList = response;
         console.log(taskList);
 
-        // render();
+        render(taskList);
     })
     .catch((err) =>{
         console.log('GET error', err);
     })
 } // end getTasks
 
-// function render() {
+function render(taskList) {
+$('#taskBody').empty();
 
-// } // end render
+for (let task of taskList) {
+    $('#taskBody').append(`
+        <tr>
+            <td>${task.task}</td>
+            <td>${task.complete}</td>
+            <td></td>
+        </tr>
+    `)
+}
+
+} // end render
