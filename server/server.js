@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 // routes tasks using taskRouter when url starts with '/tasks'
-app.use('/tasks', taskRouter)
+app.use('/tasks/', taskRouter)
 
 // listen for requests on a specific port
 app.listen(PORT, () => {
