@@ -32,3 +32,11 @@ The application has these features:
 Node.js
 Postgress
 
+## Built With
+
+HTML
+CSS
+JavaScript
+Node.js
+Postgress
+Postico
