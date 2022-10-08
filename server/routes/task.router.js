@@ -21,6 +21,29 @@ taskRouter.get('/', (req, res) => {
 }); // end GET
 
 // POST
+taskRouter.post('/', (req, res) => {
+    console.log('req.body', req.body);
+
+    const sqlText = `INSERT INTO "todolist"
+    (task, complete)
+    VALUES ($1, $2)`
+    ;
+
+    const sqlParam = [ 
+        req.body.task,
+        req.body.complete 
+    ];
+    
+    pool.query(sqlText, sqlParam) 
+        .then((dbRes) => {
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log('POST error', err);
+            res.sendStatus(500);
+        })
+}); // end POST
+
 
 // DELETE
 
