@@ -1,13 +1,34 @@
 * {box-sizing: border-box}
 
-html {
+html, body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-table, td, tr, th{
+body {
+    background-color: lightsteelblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+input {
+    margin: 5px;
+    padding: 10px 1px;
+    width: 50%;
+    height: inherit;
+}
+
+table {
     border: solid black 1px;
     border-collapse: collapse;
     padding-top: 5px;
@@ -17,3 +38,45 @@ table, td, tr, th{
     width: 75%;
     margin: auto auto 5em auto;
 }
+
+caption {
+    font: 1.5em sans-serif;
+}
+
+td {
+    border: solid darkblue 1px;
+    border-collapse: collapse;
+}
+
+tr, th{
+    border: solid darkblue 1px;
+    border-collapse: collapse;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 70px;
+    margin: auto auto 5em auto;
+}
+
+table {
+    border-radius: 10px;
+}
+
+.tasktodo {
+    width: 75%;
+}
+
+.delete {
+    width: 25%;
+}
+
+button {
+    margin: 2px;
+}
+
+#addTaskBtn {
+    margin: inherit;
+    height: inherit;
+}
+
+

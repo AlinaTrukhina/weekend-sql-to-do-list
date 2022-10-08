@@ -12,15 +12,17 @@
 <body>
     <h1>To Do List</h1>
 
-    <label for="taskInput">Add task</label>
-    <input id="taskInput" value="" type="text" placeholder="add task">
-    <button id="addTaskBtn" type="button">Add Task</button>
-
+    <section id="addTaskSection">
+        <label for="taskInput" value="add task"></label>
+        <input id="taskInput" value="" type="text" placeholder="Add task">
+        <button id="addTaskBtn" type="button">Add task</button>
+    </section>
     <table>
+        <caption>Tasks to do</caption>
         <thead>
             <th>Task</th>
-            <th>Complete?</th>
-            <th></th>
+            <!-- <th>Complete?</th> -->
+            <th>Options</th>
         </thead>
         <tbody id="taskBody">
 
@@ -29,10 +31,11 @@
 
     <!-- comleted tasks -->
     <table>
+        <caption>Completed Tasks</caption>
         <thead>
             <th>Task</th>
-            <th>Complete?</th>
-            <th></th>
+            <!-- <th>Complete?</th> -->
+            <th>Option</th>
         </thead>
         <tbody id="completeTaskBody">
 
