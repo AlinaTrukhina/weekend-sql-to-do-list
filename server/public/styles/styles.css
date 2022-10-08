@@ -144,7 +144,7 @@ button {
 
 #addTaskBtn:onClick {
 
-    border-color: white;
+    border-color: white; 
 }
 
 #reorderBtn {
