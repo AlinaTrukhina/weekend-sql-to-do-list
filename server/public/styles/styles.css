@@ -62,7 +62,7 @@ table {
     color: aliceblue;
 }
 
-#completedTable {
+.completed {
     background-color: rgb(157, 245, 182);
     color: rgb(1, 106, 106);
 }

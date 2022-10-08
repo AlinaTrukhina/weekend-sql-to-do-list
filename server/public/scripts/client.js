@@ -33,24 +33,6 @@ function getTasks() {
     })
 } // end getTasks
 
-// function getCompletedTasks() {
-//     console.log('in get completed tasks');
-//     $.ajax({
-//         method: 'GET',
-//         url: '/tasks'
-//     })
-//     .then((response) => {
-//         console.log('getting tasks');
-//         // response is list of tasks from server
-//         const completedTaskList = response;
-//         console.log(completedTaskList);
-
-//         render2(completedTaskList);
-//     })
-//     .catch((err) =>{
-//         console.log('GET error', err);
-//     })
-// } // end getCompletedTasks
 
 // function to add a task
 function addTask() {
@@ -129,8 +111,8 @@ for (let task of taskList) {
     else {
     $('#completeTaskBody').append(`
     <tr>
-        <td>${task.task}</td>
-        <td class="delete"><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
+        <td class="completed">${task.task}</td>
+        <td class="delete completed"><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
     </tr>`
     )}
     }
