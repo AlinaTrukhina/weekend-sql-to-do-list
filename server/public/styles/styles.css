@@ -54,15 +54,17 @@ table {
     padding-left: 10px;
     padding-right: 70px;
     width: 75%;
-    margin: auto auto 5em auto;
+    margin: 1.2em auto 2em auto;
 }
 
-table tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
+#completedTable th{
+    background-color: rgb(68, 132, 96);
+    color: aliceblue;
 }
 
-table tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
+#completedTable {
+    background-color: rgb(157, 245, 182);
+    color: rgb(1, 106, 106);
 }
 
 caption {
@@ -84,7 +86,7 @@ tr, th {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    margin: auto auto 5em auto;
+    margin: auto auto 2em auto;
     text-align: center;
 }
 
@@ -100,11 +102,11 @@ table {
 }
 
 .tasktodo {
-    width: 75%;
+    width: 70%;
 }
 
 .delete {
-    width: 25%;
+    width: 30%;
 }
 
 button {
