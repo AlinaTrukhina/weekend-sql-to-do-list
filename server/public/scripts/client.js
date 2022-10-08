@@ -114,45 +114,26 @@ function completeTask() {
 
 function render(taskList) {
 $('#taskBody').empty();
+$('#completeTaskBody').empty();
 
 for (let task of taskList) {
     console.log(task.complete);
     if (task.complete == false) {
     $('#taskBody').append(`
         <tr>
-            <td>${task.task}</td>
-            <td>${task.complete}</td>
-            <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
-            <td><button class="markCompleteBtn" data-id="${task.id}">Mark Complete</button></td>
+            <td class="tasktodo">${task.task}</td>
+            <td class="delete"><button class="deleteBtn" data-id="${task.id}">Delete</button>
+            <button class="markCompleteBtn" data-id="${task.id}">Mark Complete</button></td>
         </tr>
       `)} 
     else {
     $('#completeTaskBody').append(`
     <tr>
         <td>${task.task}</td>
-        <td>${task.complete}</td>
-        <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
+        <td class="delete"><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
     </tr>`
     )}
     }
 }
 
 // end render
-
-// function render2(completedTaskList) {
-//     $('#completeTaskBody').empty();
-    
-//     for (let task of completedTaskList) {
-//         console.log(task.complete);
-
-//             $('#completeTaskBody').append(`
-//             <tr>
-//                 <td>${task.task}</td>
-//                 <td>${task.complete}</td>
-//                 <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
-                
-//             </tr>`
-//         )}
-// }
-    
-
