@@ -143,7 +143,22 @@ button {
 }
 
 #addTaskBtn:onClick {
+
     border-color: white;
 }
 
+#reorderBtn {
+    display: flex;
+    margin: 30px auto 10px auto;
+    height: inherit;
+    padding: 5px 10px;
+    background-color: lightcoral;
+    color: darkblue;
+    font-size: 1.2em;
+    font-family: cursive;
+    border-radius: 5px;
+}
 
+#reorderBtn:onClick {
+    border-color: white;
+}

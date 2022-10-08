@@ -3,6 +3,8 @@
 $(document).ready(function(){
     console.log('document ready');
     //set up click listeners
+    console.log($('#reorderBtn').val());
+    
     getTasks();
 
     setUpClickListeners();
@@ -12,6 +14,7 @@ function setUpClickListeners() {
     $('#addTaskBtn').on('click', addTask);
     $('body').on('click', '.deleteBtn', deleteTask);
     $('body').on('click', '.markCompleteBtn', completeTask);
+    $('#reorderBtn').on('click', reorderTasks);
 }
 
 function getTasks() {
@@ -33,6 +36,25 @@ function getTasks() {
     })
 } // end getTasks
 
+function reorderTasks(evt) {
+    evt.preventDefault();
+    console.log('in reorder tasks');
+    $.ajax({
+        method: 'GET',
+        url: '/tasks/reorder'
+    })
+    .then((response) => {
+        console.log('getting tasks');
+        // response is list of tasks from server
+        const taskList = response;
+        console.log(taskList);
+
+        render(taskList);
+    })
+    .catch((err) =>{
+        console.log('GET error', err);
+    })
+}
 
 // function to add a task
 function addTask() {
