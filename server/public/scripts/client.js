@@ -33,6 +33,25 @@ function getTasks() {
     })
 } // end getTasks
 
+// function getCompletedTasks() {
+//     console.log('in get completed tasks');
+//     $.ajax({
+//         method: 'GET',
+//         url: '/tasks'
+//     })
+//     .then((response) => {
+//         console.log('getting tasks');
+//         // response is list of tasks from server
+//         const completedTaskList = response;
+//         console.log(completedTaskList);
+
+//         render2(completedTaskList);
+//     })
+//     .catch((err) =>{
+//         console.log('GET error', err);
+//     })
+// } // end getCompletedTasks
+
 // function to add a task
 function addTask() {
     //console.log($('#taskInput').val());
@@ -97,6 +116,8 @@ function render(taskList) {
 $('#taskBody').empty();
 
 for (let task of taskList) {
+    console.log(task.complete);
+    if (task.complete == false) {
     $('#taskBody').append(`
         <tr>
             <td>${task.task}</td>
@@ -104,7 +125,34 @@ for (let task of taskList) {
             <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
             <td><button class="markCompleteBtn" data-id="${task.id}">Mark Complete</button></td>
         </tr>
-    `)
+      `)} 
+    else {
+    $('#completeTaskBody').append(`
+    <tr>
+        <td>${task.task}</td>
+        <td>${task.complete}</td>
+        <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
+    </tr>`
+    )}
+    }
 }
 
-} // end render
+// end render
+
+// function render2(completedTaskList) {
+//     $('#completeTaskBody').empty();
+    
+//     for (let task of completedTaskList) {
+//         console.log(task.complete);
+
+//             $('#completeTaskBody').append(`
+//             <tr>
+//                 <td>${task.task}</td>
+//                 <td>${task.complete}</td>
+//                 <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
+                
+//             </tr>`
+//         )}
+// }
+    
+

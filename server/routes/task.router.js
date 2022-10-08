@@ -5,10 +5,10 @@ const pool = require('../modules/pool');
 
 // routes go here
 
-// GET
-
+// GET non-completed tasks
 taskRouter.get('/', (req, res) => {
-    pool.query(`SELECT * FROM "todolist"`)
+    pool.query(`SELECT * FROM "todolist"
+                `)
 
     .then((dbRes) => {
         console.log('getting tasks from database');
@@ -19,6 +19,22 @@ taskRouter.get('/', (req, res) => {
         res.sendStatus(500);
     })
 }); // end GET
+
+
+// GET completed tasks
+// taskRouter.get('/completed', (req, res) => {
+//     pool.query(`SELECT * FROM "todolist"
+//                 WHERE "complete" = TRUE`)
+
+//     .then((dbRes) => {
+//         console.log('getting tasks from database');
+//         res.send(dbRes.rows); // sends the rows from database as response
+//     })
+//     .catch((err) => {
+//         console.log('get tasks from DB error', err);
+//         res.sendStatus(500);
+//     })
+// }); // end GET
 
 // POST
 taskRouter.post('/', (req, res) => {
