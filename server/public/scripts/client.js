@@ -11,6 +11,7 @@ $(document).ready(function(){
 function setUpClickListeners() {
     $('#addTaskBtn').on('click', addTask);
     $('body').on('click', '.deleteBtn', deleteTask);
+    $('body').on('click', '.markCompleteBtn', completeTask);
 }
 
 function getTasks() {
@@ -34,7 +35,7 @@ function getTasks() {
 
 // function to add a task
 function addTask() {
-    console.log($('#taskInput').val());
+    //console.log($('#taskInput').val());
     const newTask = { 
         task: $('#taskInput').val(),
         complete: 'FALSE'
@@ -74,6 +75,24 @@ function deleteTask() {
     })
 }
 
+function completeTask() {
+    console.log('in complete task');
+
+    const taskID = $(this).data('id');
+    console.log('task ID', taskID);
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${taskID}`
+    })
+    .then((response) => {
+        console.log('task deleted');
+        getTasks();
+    })
+    .catch((err) => {
+        console.log('DELETE task error', err);
+    })    
+}
+
 function render(taskList) {
 $('#taskBody').empty();
 
@@ -83,6 +102,7 @@ for (let task of taskList) {
             <td>${task.task}</td>
             <td>${task.complete}</td>
             <td><button class="deleteBtn" data-id="${task.id}">Delete</button></td>
+            <td><button class="markCompleteBtn" data-id="${task.id}">Mark Complete</button></td>
         </tr>
     `)
 }

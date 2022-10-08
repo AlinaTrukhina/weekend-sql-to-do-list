@@ -53,6 +53,7 @@ taskRouter.delete('/:id', (req, res) => {
         DELETE FROM "todolist" WHERE "id" = $1
     `
 
+    // reads parameter from the url
     const sqlParam = [ req.params.id ];
 
     pool.query(sqlText, sqlParam) 
@@ -67,5 +68,27 @@ taskRouter.delete('/:id', (req, res) => {
 
 
 // PUT
+taskRouter.put('/:id', (req, res) => {
+    console.log('in complete task router');
+
+    // toggles complete status
+    const sqlText = `
+        UPDATE "todolist" 
+        SET "complete" = NOT "complete" 
+        WHERE "id" = $1
+    `
+
+    const sqlParam = [ req.params.id ];
+
+    pool.query(sqlText, sqlParam) 
+        .then((dbRes) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('error in complete task', err);
+            res.sendStatus(500);
+        })
+});
+
 
 module.exports = taskRouter;
