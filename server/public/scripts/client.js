@@ -69,14 +69,15 @@ function addTask() {
         data: newTask
     })
     .then((response) => {
-        console.log('in PUT task', newTask);
+        console.log('in POST task', newTask);
+        $('#taskInput').val() = '';
         getTasks();
     })
     .catch((err) => {
         console.log('add task error', err);
     })
 
-    $('#taskInput').val() = '';
+
 } // end addTask
 
 // function to delete a task
