@@ -59,6 +59,7 @@ function reorderTasks(evt) {
 // function to add a task
 function addTask() {
     //console.log($('#taskInput').val());
+
     const newTask = { 
         task: $('#taskInput').val(),
         complete: 'FALSE'
@@ -69,14 +70,13 @@ function addTask() {
         data: newTask
     })
     .then((response) => {
-        console.log('in POST task', newTask);
-        $('#taskInput').val() = '';
+        console.log('in POST task', response);
+        $('#taskInput').val('') ;
         getTasks();
     })
     .catch((err) => {
         console.log('add task error', err);
     })
-
 
 } // end addTask
 

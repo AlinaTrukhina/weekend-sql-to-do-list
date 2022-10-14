@@ -34,9 +34,9 @@ Postgress
 
 ## Built With
 
-HTML
-CSS
-JavaScript
-Node.js
-Postgress
-Postico
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Postgress
+- Postico

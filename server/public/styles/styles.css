@@ -47,6 +47,7 @@ input {
 
 table {
     border: solid black 1px;
+    border-radius: 10px;
     background-color: lightpink;
     border-collapse: collapse;
     padding-top: 5px;
@@ -80,8 +81,9 @@ td {
     text-align: center;
 }
 
-tr, th {
-    border: solid darkblue 1px;
+tr, td {
+    border-left: solid darkblue 1px;
+    border-right: solid darkblue 1px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -93,12 +95,6 @@ tr, th {
 th {
     background-color: rgb(226, 149, 160);
     font-size: 1.25em;
-}
-
-table {
-    font-size: 1.15em;
-    border: solid darkblue 2px;
-    border-collapse: collapse;
 }
 
 .tasktodo {

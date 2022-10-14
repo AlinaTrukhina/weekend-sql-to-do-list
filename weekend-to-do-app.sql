@@ -12,4 +12,3 @@ VALUES ('wash dishes', FALSE),
 		('sweep floor', FALSE),
 		('laundry', FALSE);
 
-DELETE FROM "todolist" WHERE "id" = $1
